@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>About</title>
+    <%# get the stylesheet from assets folder %>
+		<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+    <%# include the templates %>
+			<% include partials/header.ejs %>
+			<main>
+        <%# include the templates %>
+				<% include partials/navigation.ejs %>
+				<div id="page_name">
+				<b>About</b>
+				</div>
+				<div id="main_content">
+				<h2>About Foodie Niner! </h2>
+				<h3>Log In as a Foodie</h3>
+				<p>If you log in as a foodie you can see different events hosted by Chefs in the Niner Nation and you can attend them as a customer.</p>
+				<p>Foodies will get a chance to eat food from different cuisines and cultures.</p>
+				<br>
+				<h3>Log In as a Chef</h3>
+				<p>If you logIn as a chef, you can create new events and invite all the foodies to try out your food and you can even ask other chefs to join you in that event.</p>
+				<br>
+				</div>
+			</main>
+      <%# include the templates %>
+		<% include partials/footer.ejs %>
+	</body>
+	</html>

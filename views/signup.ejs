@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Register</title>
+		<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+			<% include partials/header.ejs %>
+			<main>
+				<% include partials/navigation.ejs %>
+				<div id="page_name">
+				<b>Register</b>
+				</div>
+
+				<div id="connection_content">
+          <% if(er === 1){ %>
+  				<h2>Please ensure you have filled the details Correctly</h2>
+          <%}else if(er === 2){%>
+          <h2>Email already exists try with different email</h2>
+  				<%}else{%>
+  				<h2>Enter your details</h2>
+  				<%}%>
+        <form  action="signup" method="POST">
+        <fieldset>
+        <legend>Loh In Details:</legend>
+        Email:<br>
+        <input type="email" name="UserName"><br>
+        Password :<br>
+        <input type="password" name="Password"><br>
+        First Name:<br>
+        <input type="text" name="firstName"><br>
+        Last Name:<br>
+        <input type="text" name="lastName"><br>
+        Address1:<br>
+        <input type="text" name="address1"><br>
+        Address2:<br>
+        <input type="text" name="address2"><br>
+        City:<br>
+        <input type="text" name="city"><br>
+        State:<br>
+        <input type="text" name="state"><br>
+        country:<br>
+        <input type="text" name="country"><br>
+        Zipcode:<br>
+        <input type="number" name="zipCode"><br>
+        <input type="submit" value="SignUP">
+        </fieldset>
+      </form>
+				</div>
+
+			</main>
+			<% include partials/footer.ejs %>
+		</footer>
+
+
+
+	</body>
+	</html>

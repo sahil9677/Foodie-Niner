@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>New Connections</title>
+		<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+			<% include partials/header1.ejs %>
+			<main>
+				<% include partials/navigation.ejs %>
+				<div id="page_name">
+				<b>Add a Connection</b>
+				</div>
+
+				<div id="connection_content">
+					<% if(edit === 1){ %>
+				 <p><h3>Edit the connection <%= event.connectionTopic %>:<%= event.connectionName %></h3></p>
+				 <%}else{%>
+					 <p>New Connection</p>
+					 <%}%>
+					 <% if(edit === 1){ %>
+        		<form  action="/connections?action=edit&conID=<%= event.connectionID%>" method="POST">
+					<%}else{%>
+						<form  action="/connections" method="POST">
+							<%}%>
+        <fieldset>
+
+        <legend>Connection information:</legend>
+				Topic:<br>
+				<select name="Topic">
+    <option value="Chinese">Chinese</option>
+    <option value="Italian">Italian</option>
+  </select><br>
+        Name:<br>
+        <input type="text" name="Name"><br>
+
+        Location:<br>
+        <input type="text" name="Location"><br>
+        Descrition:<br>
+        <input type="text" name="Descrition"><br>
+        Date:<br>
+        <input type="date" name="Date"><br>
+        Start Time:<br>
+        <input type="text" name="start"><br>
+        End Time:<br>
+        <input type="text" name="end"><br>
+        <input type="submit" value="Create Connection" href = "/connections">
+        </fieldset>
+      </form>
+			<% if(edit === 1){ %>
+		 <a href="/connections?action=delete&conID=<%= event.connectionID%>"><button type="button" class="button">Delete Connection</button></a>
+		 <%}%>
+				</div>
+
+			</main>
+			<% include partials/footer.ejs %>
+		</footer>
+
+
+
+	</body>
+	</html>

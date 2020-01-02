@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Connection</title>
+		<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+    <%# include the templates %>
+			<% include partials/header1.ejs %>
+			<main>
+        <%# include the templates %>
+				<% include partials/navigation.ejs %>
+				<div id="page_name">
+				<b>Connection</b>
+				</div>
+
+				<div id="connection_content">
+				<h2>Connection Details</h2>
+
+        <%# get the dynamic content to display %>
+				<h3><%= event.connectionTopic %>:<%= event.connectionName %></h3>
+				<img
+					id="profile_img"
+					src="/assets/images/norm.png"
+					alt="Foodie Niner Logo"
+					width="100" height="130"
+				  />
+					<% if(edit === 1){ %>
+				 <p>Hosted by:<%= host  %></p>
+				 <a href="/newconnection?action=edit&conID=<%= event.connectionID%>"><button type="button" class="button">Edit</button></a>
+				 <%}else{%>
+					 <p>Hosted by:<%= host  %></p>
+					 <%}%>
+				<p>Time and Date:<%= event.date %>, <%= event.Time %></p>
+				<p>Location:<%= event.Location %></p>
+				<h4>Details</h4>
+				<p><%= event.details %></p>
+				</div>
+				<% if(flag === 1){ %>
+					<h4>Are you Going?</h4>
+					<a href="/savedconnections?action=update&conID=<%= event.connectionID%>&rsvp=Yes"><button type="button" class="button">Yes</button></a>
+					<a href="/savedconnections?action=update&conID=<%= event.connectionID%>&rsvp=No"><button type="button" class="button" >No</button></a>
+					<a href="/savedconnections?action=update&conID=<%= event.connectionID%>&rsvp=May Be"><button type="button" class="button">May Be</button></a>
+				<%}%>
+			</main>
+      <%# include the templates %>
+			<% include partials/footer.ejs %>
+
+
+
+	</body>
+	</html>

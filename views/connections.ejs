@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Connections</title>
+		<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+			<% include partials/header1.ejs %>
+			<main>
+				<% include partials/navigation.ejs %>
+				<div id="page_name">
+				<b>Connections</b>
+				</div>
+				<div id="main_content">
+				<h2>All Connections </h2>
+				<h3>Italian</h3>
+        <%# get the dynamic contect to display %>
+          <% for(var i = 0; i<italian.length; i++){ %>
+ 				<p><a href="/connection?conID=<%= italian[i].connectionID %>"><%= italian[i].connectionName  %></a></p>
+ 				<% }%>
+ 				<br>
+ 				<h3>Chinese</h3>
+         <% for(var i = 0; i<chinese.length; i++){ %>
+ 				<p><a href="/connection?conID=<%= chinese[i].connectionID %>"><%= chinese[i].connectionName  %></a></p>
+ 				<% }%>
+				<br>
+				</div>
+			</main>
+		<% include partials/footer.ejs %>
+
+
+
+	</body>
+	</html>

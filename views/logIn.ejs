@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Log In</title>
+		<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+			<% include partials/header.ejs %>
+			<main>
+				<% include partials/navigation.ejs %>
+				<div id="page_name">
+				<b>Log In</b>
+				</div>
+
+				<div id="connection_content">
+				<% if(d2 === 1){ %>
+				<h2>User Registered Sign In with New Credentials</h2>
+				<%}else{%>
+				<h2>Sign In</h2>
+				<%}%>
+        <form  action="logIn" method="POST">
+        <fieldset>
+        <legend>Loh In Details:</legend>
+        User Name:<br>
+        <input type="email" name="UserName"><br>
+        Password :<br>
+        <input type="password" name="Password"><br>
+        <input type="submit" value="Log In">
+        </fieldset>
+      </form>
+				</div>
+
+			</main>
+			<% include partials/footer.ejs %>
+		</footer>
+
+
+
+	</body>
+	</html>

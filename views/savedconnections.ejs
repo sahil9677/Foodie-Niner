@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Saved Connections</title>
+		<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+			<% include partials/header1.ejs %>
+			<main>
+				<% include partials/navigation.ejs %>
+				<div id="page_name">
+				<b>Saved Connections</b>
+				</div>
+
+				<div id="connection_content">
+				<h2>Your Connections </h2>
+				  <table style="width:100%">
+        <tr>
+          <th>Connection</th>
+          <th>Category</th>
+          <th>Going</th>
+          <th>Update</th>
+        </tr>
+				<% for(var i = 0; i<data2.length; i++){ %>
+			<tr>
+				<th><%=data2[i].connectionTopic%></th>
+				<th><%=data2[i].connectionName%></th>
+				<th><%=data1[i].rsvp%></th>
+				<th><a href="/connection?conID=<%= data2[i].connectionID%>"><button type="button" class="button">Update</button></a>
+			<a href="/savedconnections?action=delete&conID=<%= data2[i].connectionID%>"><button type="button" class="button" >Delete</button></a></th>
+			</tr>
+			<% }%>
+      </table>
+				</div>
+
+			</main>
+			<% include partials/footer.ejs %>
+		</footer>
+	</body>
+	</html>
